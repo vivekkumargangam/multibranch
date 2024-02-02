@@ -7,7 +7,7 @@ pipeline
             {
                 steps
                 {
-                    git 'https://github.com/vivekkumargangam/newgit.git'
+                    git 'https://github.com/vivekkumargangam/multibranch.git'
                 }
             }
             stage('copying the file to root directory')
