@@ -24,26 +24,5 @@ pipeline
                     sh 'sudo -S docker build -t jalm-2.3.5 -f Dockerfile /root/multibranch_pipeline_master/'
                 }
             }
-            stage('bulding the docker container')
-            {
-                steps
-                {
-                    script
-                    {
-                     try
-                     
-                     {
-                         sh 'sudo -S docker run --name ja1 -itd jalm-2.3.5'
-                     }
-                     catch(Exception e1)
-                     {
-                        input message: 'remove the container', submitter: 'vivek'
-                        sh 'sudo -S docker rm -f ja1'
-                        sh 'sudo -S docker run --name ja1 -itd jalm-2.3.5'
-                     }
-                    }
-                }    
-            }
-            
         }
 }
